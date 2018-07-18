@@ -1,0 +1,25 @@
+{
+  "name": "js-todos",
+  "version": "1.0.0",
+  "description": "Todo Apps",
+  "main": "todo.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uber-fox-2018/js-todos.git"
+  },
+  "keywords": [
+    "Todo",
+    "Apps"
+  ],
+  "author": "Asrul H",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uber-fox-2018/js-todos/issues"
+  },
+  "homepage": "https://github.com/uber-fox-2018/js-todos#readme"
+}

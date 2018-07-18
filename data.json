@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": 1,
+    "activity": "pulang now",
+    "status": true,
+    "createdAt": "7/18/2018"
+  }
+]
