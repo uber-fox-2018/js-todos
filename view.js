@@ -13,10 +13,17 @@ class ToDo {
 
   static display (data){
     data.forEach((data) => {
-      console.log(data)
+      console.log(`${data.id}. ${data.status} ${data.task}`);
     })
   }
 
+  static added (task){
+    console.log(`"${task}" added to your TODO list`);
+  }
+
+  static deleted (task){
+    console.log(`"${task[0].task}" deleted from your TODO list`);
+  }
 }
 
 
