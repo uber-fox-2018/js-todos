@@ -12,8 +12,15 @@ class Model {
         fs.writeFileSync('./data.json', writeData)
     }
 
-    static deleteData(){
-        let deleted = this.read()
+    static find(id){
+        let findData = []
+        let readData = this.read()
+        for(let i = 0; i < readData.length; i++){
+            if(readData[i].id == id) {
+                findData.push(readData[i])
+            }
+        }
+        return findData
     }
 }
 

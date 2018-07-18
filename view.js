@@ -15,12 +15,25 @@ class View {
     static displayList(lists){
         console.log('==========List Aktifitas==========')
         for(let i = 0; i < lists.length; i++){
-            console.log( (i+1) + ' ' + lists[i].aktifitas)
+            if(lists[i].status){
+                let tampil =  i+1  + ' ' + '[ ] ' + lists[i].aktifitas
+                console.log(tampil)
+            } else {
+                let tampil =  i+1  + ' ' + '[X] ' + lists[i].aktifitas
+                console.log(tampil)
+            }
         }
     }
 
-
-
+    static displayFindId(lists){
+        if(lists[0].status){
+            let tampil = '[ ] ' + lists[0].aktifitas
+            console.log(tampil)
+        } else {
+            let tampil = '[X] ' + lists[0].aktifitas
+            console.log(tampil)
+        }
+    }
 }
 
 module.exports = View

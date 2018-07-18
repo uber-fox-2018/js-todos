@@ -1,10 +1,22 @@
 [
   {
     "id": 1,
-    "aktifitas": "Tidur Siang"
+    "aktifitas": "Mandi Pagi",
+    "status": true
   },
   {
     "id": 2,
-    "aktifitas": "Makan Malam"
+    "aktifitas": "Makan Malam",
+    "status": false
+  },
+  {
+    "id": 3,
+    "aktifitas": "Makan",
+    "status": true
+  },
+  {
+    "id": 4,
+    "aktifitas": "Makan",
+    "status": true
   }
 ]
