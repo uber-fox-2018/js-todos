@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": 1,
+    "aktifitas": "Tidur Siang"
+  },
+  {
+    "id": 2,
+    "aktifitas": "Makan Malam"
+  }
+]
