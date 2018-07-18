@@ -88,7 +88,7 @@ class ToDo {
 
   filterTag (tag){
     let theTasks = this.Model.findTaggedTask (tag);
-    View.display(theTasks);
+    View.filtered(theTasks);
   }
 }
 

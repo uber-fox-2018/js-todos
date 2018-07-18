@@ -15,9 +15,9 @@ class ToDo {
     console.log('node todo.js filter <tag>');
   }
 
-  static display (data){
-    data.forEach((data) => {
-      console.log(`${data.id}. ${data.status} ${data.task}`);
+  static display (tasks){
+    tasks.forEach((task) => {
+      console.log(`${task.id}. ${task.status} ${task.task}`);
     })
   }
 
@@ -30,7 +30,13 @@ class ToDo {
   }
 
   static tagged (task){
-    console.log(`"${task[0].task}" tagged with ${task[0].tags.join(' ')}`);
+    console.log(`"${task[0].task}" tagged with: "${task[0].tags.join(' ')}"`);
+  }
+
+  static filtered(tasks){
+    tasks.forEach((task) => {
+      console.log(`${task.id}. ${task.task} [${task.tags}]`);
+    })
   }
 }
 

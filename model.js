@@ -138,6 +138,7 @@ class ToDo {
         }
       })
     })
+    console.log(theTasks)
     return theTasks;
   }
 }
