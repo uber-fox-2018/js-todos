@@ -37,6 +37,14 @@ class Controller {
         this.view.v_uncomplete(this.model.m_uncomplete(input))
     }
 
+    c_listCreated(){
+        this.view.v_listCreated(this.model.m_listCreated())
+    }
+
+    c_listOutStanding(input){
+        this.view.v_listOutStanding(this.model.m_listOutStanding(input))
+    }
+
 
 }
 

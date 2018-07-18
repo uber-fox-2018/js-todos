@@ -19,4 +19,8 @@ if(command === 'help'){
     controller.c_complete(input)
 } else if (command === 'uncomplete'){
     controller.c_uncomplete(input)
+} else if (command === 'list:created'){
+    controller.c_listCreated()
+} else if (command === 'list:outstanding'){
+    controller.c_listOutStanding(input)
 }

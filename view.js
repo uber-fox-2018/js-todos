@@ -38,5 +38,14 @@ class View {
     v_uncomplete(input){
         console.log(input)
     }
+
+    v_listCreated(input){
+        console.log(input)
+    }
+
+    v_listOutStanding(input){
+        console.log(input)
+    }
+
 }
 module.exports = View

@@ -3,6 +3,7 @@ let fs = require('fs')
 
 class Model {
     constructor(){
+        // this.data = this.readData()
 
     }
    
@@ -30,7 +31,9 @@ class Model {
         var objData = {
             id: data.length+1,
             task: input,
-            status: '[ ]'
+            status: '[ ]',
+            createdAt: new Date(),
+            completedDate: new Date()
         }
 
         data.push(objData)
@@ -94,6 +97,40 @@ class Model {
         }
         return this.m_list()
     }
+
+    m_listCreated(input){
+        let data = this.readData()
+
+        data.sort(function(a,b){
+            return new Date(a.date) - new Date(b.date)
+        } )
+        return this.m_list()
+    }
+
+    m_listOutStanding(input){
+        let data = this.readData()
+        let ascDesc = ''
+
+        if(input === 'ASC'){
+            data.sort(function(a,b){
+                return new Date(a.date) - new Date(b.date)
+            })
+        } else if (input === 'DESC'){
+            data.sort(function(a,b){
+                return new Date(b.date) - new Date(a.date)
+            } )
+        }
+
+        for(let i = 0; i<data.length; i++){
+            ascDesc += `${data[i].id}. ${data[i].status} ${data[i].task}\n`
+        }
+
+        return ascDesc
+
+    }
+
+
+
 }
 
 // console.log(Model.m_findById(3))
