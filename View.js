@@ -14,15 +14,27 @@ class View {
     static DisplayList(todo) {
         console.log("===== ===== Daftar Todo ===== =====");
         for(let i = 0; i < todo.length; i++) {
-            let lihat = `${ i+1 }. ${ todo[i].activity }`;
-            console.log(lihat);
+            if(todo[i].status) {
+                let lihat = `${ i+1 }. [ ] ${ todo[i].activity }`;
+                console.log(lihat);
+            } else {
+                let lihat = `${ i+1 }. [x] ${ todo[i].activity }`;
+                console.log(lihat);
+            }
+            
         }
     }
 
     static DisplayOne(todo) {
         console.log(`===== ===== Todo Id ke ${ todo[0].id } ===== =====`);
-        let lihat = `${ todo[0].activity }`;
-        console.log(lihat);
+        if(todo[0].status) {
+            let lihat = `[ ] ${ todo[0].activity }`;
+            console.log(lihat);
+        } else {
+            let lihat = `[x] ${ todo[0].activity }`;
+            console.log(lihat);
+        }
+        
     }
 }
 

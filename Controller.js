@@ -19,6 +19,10 @@ class Controller {
             this.findById();
         } else if (this.perintah[0] == 'delete' && this.perintah[1] != undefined) {
             this.deleteId();
+        } else if (this.perintah[0] == 'complete') {
+            this.complete();
+        } else if (this.perintah[0] == 'uncomplete') {
+            this.uncomplete();
         }
 
 
@@ -38,7 +42,8 @@ class Controller {
         let id = +todo[todo.length-1].id + 1;
         let activityObj = {
             "id": id,
-            "activity": this.perintah[1]
+            "activity": this.perintah[1],
+            "status": true
         };
         
         this.activity = todo
@@ -60,6 +65,44 @@ class Controller {
         let dataTodo = [];
         for(let i = 0; i < todo.length; i++) {
             if(todo[i].id != this.perintah[1]) {
+                dataTodo.push(todo[i]);
+            }
+        }
+
+        this.activity = dataTodo;
+        Model.write(this.activity);
+        this.activity = [];
+        this.list();
+    }
+
+    complete() {
+        let todo = Model.read();
+        console.log("todo ", todo[1].status);
+        let dataTodo = [];
+        for(let i = 0; i < todo.length; i++) {
+            if(todo[i].id == this.perintah[1]) {
+                todo[i].status = false;
+                dataTodo.push(todo[i]);
+            } else {
+                dataTodo.push(todo[i]);
+            }
+        }
+
+        this.activity = dataTodo;
+        Model.write(this.activity);
+        this.activity = [];
+        this.list();
+    }
+
+    uncomplete() {
+        let todo = Model.read();
+        console.log("todo ", todo[1].status);
+        let dataTodo = [];
+        for(let i = 0; i < todo.length; i++) {
+            if(todo[i].id == this.perintah[1]) {
+                todo[i].status = true;
+                dataTodo.push(todo[i]);
+            } else {
                 dataTodo.push(todo[i]);
             }
         }
