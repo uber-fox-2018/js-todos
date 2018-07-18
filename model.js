@@ -114,6 +114,32 @@ class ToDo {
       return newData;
     }
   }
+
+  tagTask(id, tagArr){
+    this.data.forEach((task) =>{
+      if(task.id == id){
+        tagArr.forEach((tag) => {
+          task.tags.push(tag);
+        })
+      }
+    })
+    this.write(this.data);
+
+    let taggedTask = this.data.filter(task => task.id == id);
+    return taggedTask;
+  }
+
+  findTaggedTask (tagQuery){
+    let theTasks = [];
+    this.data.forEach((task) => {
+      task.tags.forEach((tag) =>{
+        if(tag == tagQuery){
+          theTasks.push(task)
+        }
+      })
+    })
+    return theTasks;
+  }
 }
 
 

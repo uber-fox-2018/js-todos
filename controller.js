@@ -32,6 +32,10 @@ class ToDo {
       } else if (input[0] == 'completed') {
         this.sortByCompleted(input[1]);
       }
+    } else if (command == 'tag'){
+      this.tag(input[0], input.slice(1));
+    } else if (command == 'filter'){
+      this.filterTag(input[0]);
     } else {
       View.help();
     }
@@ -75,6 +79,16 @@ class ToDo {
   sortByCompleted(order){
     let data = this.Model.sortCompletedDate(order);
     View.display(data);
+  }
+
+  tag (id, tagArr){
+    let taggedTask = this.Model.tagTask(id, tagArr);
+    View.tagged(taggedTask);
+  }
+
+  filterTag (tag){
+    let theTasks = this.Model.findTaggedTask (tag);
+    View.display(theTasks);
   }
 }
 

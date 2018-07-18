@@ -11,6 +11,8 @@ class ToDo {
     console.log('node todo.js uncomplete <task_id>');
     console.log('node todo.js sortby created <ASC/DESC>');
     console.log('node todo.js sortby completed <ASC/DESC>');
+    console.log('node todo.js tag <task_id> <tag(s)>');
+    console.log('node todo.js filter <tag>');
   }
 
   static display (data){
@@ -25,6 +27,10 @@ class ToDo {
 
   static deleted (task){
     console.log(`"${task[0].task}" deleted from your TODO list`);
+  }
+
+  static tagged (task){
+    console.log(`"${task[0].task}" tagged with ${task[0].tags.join(' ')}`);
   }
 }
 
