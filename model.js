@@ -21,13 +21,14 @@ class ToDo {
 
   addTask(newTask){
     let taskObj = {
-      id: this.data.length + 1,
+      id: this.data[0].idCounter + 1,
       status: '[ ]',
       task: newTask,
       dateCreated: new Date (),
       dateCompleted: '',
       tags: [],
     }
+    this.data[0].idCounter += 1;
     this.data.push(taskObj);
 
     return this.write(this.data);
@@ -85,6 +86,7 @@ class ToDo {
         }
       }
     }
+    newData.pop();
     if (order == 'DESC'){
       return newData.reverse();
     } else {
@@ -132,15 +134,18 @@ class ToDo {
   findTaggedTask (tagQuery){
     let theTasks = [];
     this.data.forEach((task) => {
-      task.tags.forEach((tag) =>{
-        if(tag == tagQuery){
-          theTasks.push(task)
-        }
-      })
+      if (task.tags){
+        task.tags.forEach((tag) =>{
+          if(tag == tagQuery){
+            theTasks.push(task)
+          }
+        })
+      }
     })
     return theTasks;
   }
 }
+
 
 
 module.exports = ToDo;
