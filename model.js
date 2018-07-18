@@ -33,7 +33,7 @@ class Model {
             task: input,
             status: '[ ]',
             createdAt: new Date(),
-            completedDate: new Date()
+            completedDate: null
         }
 
         data.push(objData)
@@ -79,6 +79,7 @@ class Model {
         for( let i = 0; i< data.length;i++){
             if(Number(input) === data[i].id){
                data[i].status = '[X]'
+               data[i].completedDate = new Date()
                fs.writeFileSync('./data.json',JSON.stringify(data))  
             }
         }
@@ -147,10 +148,11 @@ class Model {
         return completedSort
 
     }
-
-
-
 }
+
+let a = new Model()
+console.log(a.m_listCompleted());
+
 
 // console.log(Model.m_findById(3))
 // console.log(Model.m_delete(5))
