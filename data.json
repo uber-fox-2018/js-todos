@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": 1,
+    "aktifitas": "Mandi Pagi",
+    "status": true
+  },
+  {
+    "id": 2,
+    "aktifitas": "Makan Malam",
+    "status": false
+  },
+  {
+    "id": 3,
+    "aktifitas": "Makan",
+    "status": true
+  },
+  {
+    "id": 4,
+    "aktifitas": "Makan",
+    "status": true
+  }
+]
