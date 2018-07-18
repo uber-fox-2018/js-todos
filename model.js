@@ -36,23 +36,60 @@ class Model {
 
   addTask(list) {
     this._todo = list;
-
   }
 
   save(addTask) {
-    let listTodo = this._todo;;
+    let listTodo = this._todo;
     listTodo.push({
       id: listTodo[listTodo.length-1].id + 1, 
       task: addTask
     });
-
     
-    let output = JSON.stringify(listTodo, null, 2)
-    let overWrite = fs.writeFileSync('./data.json', output);
-    return `Task succesfully added`
+    let taskAdded = JSON.stringify(listTodo, null, 2);
+    let overWrite = fs.writeFileSync('./data.json', taskAdded);
+    // for(let i = 0; i < listTodo.length; i++) {
+    //   console.log(`${listTodo[i].id}. ${listTodo[i].task}`);
+    // }
+
+    return `\nTask succesfully added :)`;
+
   }
 
+  search(taskId) {
+    let listTodo = this._todo;
+    for(let i = 0; i < listTodo.length; i++) {
+      if(listTodo[i].id === +taskId) {
+        return `${listTodo[i].id}. ${listTodo[i].task}`;
+      } 
+    }
 
+    return `Task not found`;
+
+  }
+
+  drop(taskId) {
+    let output = []
+    let listTodo = this._todo;
+    for(let i = 0; i < listTodo.length; i++) {
+      if(listTodo[i].id != taskId) {
+        if(listTodo[i].id > +taskId) {
+          listTodo[i].id -= 1;
+        }
+        output.push(listTodo[i]);
+      } 
+    }
+
+    let taskDroped = JSON.stringify(output, null, 2);
+    let overWrite = fs.writeFileSync('./data.json', taskDroped);
+
+    return 'Task succesfully deleted';
+
+  }
+
+  completed(taskId) {
+    console.log('yeee');
+    
+  }
 
 }
 

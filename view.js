@@ -5,20 +5,34 @@ class View{
 
   help(menu) {
     menu.forEach(element => {
-      console.log(element);
+      console.log(`$ ${element}`);
     });
   }
 
-  listTodo(list) {
-    for(let i = 0; i < list.length; i++) {
-      console.log(`${list[i].id}. ${list[i].task}`);
+  listTodo(task) {
+    for(let i = 0; i < task.length; i++) {
+      console.log(`${task[i].id}. ${task[i].task}`);
     }
+
   }
 
-  updateTask(list) {
-    console.log(list);
+  addTask(task) {
+    console.log(task);
+  }
+
+  taskFound(taskId) {
+    console.log(taskId);
     
   }
+
+  drop(taskId) {
+    console.log(taskId);
+  }
+
+  completed(taskId) {
+    console.log('yeee');
+    
+  } 
 
 }
 

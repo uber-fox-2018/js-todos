@@ -22,5 +22,25 @@
   {
     "id": 6,
     "task": "Prepare buat livecode besok"
+  },
+  {
+    "id": 7,
+    "task": "Shalat isya, 10 menit lagi"
+  },
+  {
+    "id": 8,
+    "task": "makan"
+  },
+  {
+    "id": 9,
+    "task": "ngopi"
+  },
+  {
+    "id": 10,
+    "task": "ngopi lagi"
+  },
+  {
+    "id": 11,
+    "task": "mandi"
   }
 ]
