@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 1,
+    "status": "inComplete",
+    "listName": "sarapan ayam",
+    "createdAt": "2018-07-18T11:31:44.492Z",
+    "completedDate": null,
+    "tag": []
+  },
+  {
+    "id": 2,
+    "status": "complete",
+    "listName": "sarapan nasi",
+    "createdAt": "2018-07-18T11:31:48.466Z",
+    "completedDate": "2018-07-18T11:32:39.750Z",
+    "tag": []
+  },
+  {
+    "id": 3,
+    "status": "complete",
+    "listName": "sarapan jagung",
+    "createdAt": "2018-07-18T11:31:53.459Z",
+    "completedDate": "2018-07-18T11:33:11.567Z",
+    "tag": ["makan"]
+  },
+  {
+    "id": 4,
+    "status": "inComplete",
+    "listName": "sarapan bubur",
+    "createdAt": "2018-07-18T11:31:58.011Z",
+    "completedDate": null,
+    "tag": []
+  },
+  {
+    "id": 5,
+    "status": "complete",
+    "listName": "sarapan ayam",
+    "createdAt": "2018-07-18T11:32:01.590Z",
+    "completedDate": "2018-07-18T11:33:33.957Z",
+    "tag": []
+  },
+  {
+    "id": 6,
+    "status": "complete",
+    "listName": "sarapan gorengan",
+    "createdAt": "2018-07-18T11:32:06.487Z",
+    "completedDate": "2018-07-18T11:34:01.869Z",
+    "tag": []
+  }
+]
