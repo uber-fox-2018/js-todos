@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Bikin Aplikasi"
+  },
+  {
+    "id": 2,
+    "task": "Main Node.js"
+  },
+  {
+    "id": 3,
+    "task": "Shut down my computer"
+  },
+  {
+    "id": 4,
+    "task": "Shalat Maghrib 5 menit lagi"
+  },
+  {
+    "id": 5,
+    "task": "Tuntaskan semua challange hari ini"
+  },
+  {
+    "id": 6,
+    "task": "Prepare buat livecode besok"
+  }
+]
