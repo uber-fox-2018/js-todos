@@ -1,9 +1,1 @@
-[
-    {"task": "Bikin aplikasi"},
-    {"task": "Main Node.js"},
-    {"task": "Check PR Jeremy"},
-    {"task": "Periksa meteran listrik"},
-    {"task": "Panasin mesin mobil"},
-    {"task": "Cuci piring"},
-    {"task": "Call antar aqua gallon"}
-]
+[{"id":1,"task":"Membayar listrik dan PAM","sign":"[]"},{"id":2,"task":"Periksa PR Jeremy","sign":"[]"},{"id":4,"task":"Menyapu","sign":"[]"},{"id":5,"task":"Ngepel","sign":"[]"}]
