@@ -29,13 +29,19 @@ class Model {
             taskObj = {
                 id: 1,
                 task: task,
-                status: ' '
+                status: ' ',
+                created_at: new Date(),
+                completed_at: '',
+                tag: null
             }
         } else {
             taskObj = {
                 id: Number(dataList[dataList.length - 1].id) + 1,
                 task: task,
-                status: ' '
+                status: ' ',
+                created_at: new Date(),
+                completed_at: '',
+                tag: null
             }
         }
         // console.log(dataList[dataList.length-1]);
@@ -80,6 +86,7 @@ class Model {
         for (let i = 0; i < data.length; i++) {
             if (data[i].id === id) {
                 data[i].status = 'V'
+                data[i].completed_at = new Date()
                 result += ` Your "${data[i].task}" is Completed`
             }
         }
@@ -98,6 +105,41 @@ class Model {
         }
         fs.writeFileSync('data.json', JSON.stringify(data))
         return result
+    }
+
+    addTag(id, tag) {
+        let data = this.data
+        let result = ''
+        for(let i = 0; i < data.length; i++) {
+            if(data[i].id === id) {
+                data[i].tag = tag
+                result += `Tagged Task "${data[i].task}" with tags: ${tag.join(', ')}`
+            }
+        }
+        fs.writeFileSync('data.json', JSON.stringify(data))
+        return result
+    }
+
+    filterTag(tag) {
+        let datas = this.data
+        let result = ''
+        let dataFilter = datas.filter(data => {
+            // console.log(data);
+            let rgx = new RegExp(tag, 'g')
+            let regex = data.tag.join('').match(rgx)
+            // console.log('===>',typeof String(regex), typeof tag);
+            return String(regex) === tag
+            // console.log('===>',regex.length);
+            // console.log(data.tag.join('').match(rgx), [tag]);
+            
+            // return data.tag.join('').match(rgx) == [tag]
+        })
+        // console.log('=============');
+        return dataFilter
+        // console.log(dataFilter);
+        
+        // console.log(`${filter.id}. "${filter.task}"`);
+        
     }
 }
 
