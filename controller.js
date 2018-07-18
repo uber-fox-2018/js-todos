@@ -32,9 +32,19 @@ class Controller {
     this.view.drop(taskDeleted);
   }
 
-  completed(taskId) {
-    let done = this.model.completed(taskId);
-    this.view.completed(done)
+  addStatus(taskStatus) {
+    let convert = this.model.addStatus(taskStatus);
+    this.view.addStatus(convert); 
+  }
+
+  complete(list) {
+    let done = this.model.complete(list);
+    this.view.complete(done);
+  }
+
+  uncomplete(taskId) {
+    let undone = this.model.uncomplete(taskId);
+    this.view.uncomplete(undone);
   }
 
 }

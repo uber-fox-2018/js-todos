@@ -47,9 +47,6 @@ class Model {
     
     let taskAdded = JSON.stringify(listTodo, null, 2);
     let overWrite = fs.writeFileSync('./data.json', taskAdded);
-    // for(let i = 0; i < listTodo.length; i++) {
-    //   console.log(`${listTodo[i].id}. ${listTodo[i].task}`);
-    // }
 
     return `\nTask succesfully added :)`;
 
@@ -86,9 +83,52 @@ class Model {
 
   }
 
-  completed(taskId) {
-    console.log('yeee');
+  addStatus(taskStatus) {
+    let statusAdded = [];
+    let list = this._todo;
+    for(let i = 0; i < list.length; i++) {
+      statusAdded.push({
+        id: list[i].id,
+        status: ['X'],
+        task: list[i].task
+      });
+    }
+
+    return statusAdded;
+
+    let checked = JSON.stringify(statusAdded, null, 2);
+    let overWrite = fs.writeFileSync('./data.json', checked);
     
+  }
+
+  complete(taskId) {
+    let list = this._todo;
+    for(let i = 0; i < list.length; i++) {
+      if(list[i].id === +taskId) {
+        list[i].status[0] = ' ';
+      }
+    }
+
+    return list;
+    
+    let complete = JSON.stringify(list, null, 2);
+    let overWrite = fs.writeFileSync('./data.json', complete);
+    
+  }
+
+  uncomplete(taskId) {
+    let list = this._todo;
+    for(let i = 0; i < list.length; i++) {
+      if(list[i].id === +taskId) {
+        list[i].status[0] = 'X';
+      }
+    }
+
+    return list;
+
+    let done = JSON.stringify(list, null, 2);
+    let overWrite = fs.writeFileSync('./data.json', done);
+
   }
 
 }

@@ -13,7 +13,6 @@ class View{
     for(let i = 0; i < task.length; i++) {
       console.log(`${task[i].id}. ${task[i].task}`);
     }
-
   }
 
   addTask(task) {
@@ -29,9 +28,20 @@ class View{
     console.log(taskId);
   }
 
-  completed(taskId) {
-    console.log('yeee');
-    
+  addStatus(taskStatus) {
+    console.log(taskStatus);
+  }
+
+  complete(list) {
+    for(let i = 0; i < list.length; i++) {
+      console.log(`${list[i].id}.  [${list[i].status}]  ${list[i].task}`);
+    }
+  } 
+
+  uncomplete(list) {
+    for(let i = 0; i < list.length; i++) {
+      console.log(`${list[i].id}.  [${list[i].status}]  ${list[i].task}`);
+    }
   } 
 
 }
