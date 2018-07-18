@@ -23,4 +23,6 @@ if(command === 'help'){
     controller.c_listCreated()
 } else if (command === 'list:outstanding'){
     controller.c_listOutStanding(input)
+} else if( command === 'list:completed'){
+    controller.c_listCompleted(input)
 }

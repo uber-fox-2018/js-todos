@@ -102,7 +102,7 @@ class Model {
         let data = this.readData()
 
         data.sort(function(a,b){
-            return new Date(a.date) - new Date(b.date)
+            return new Date(a.createdAt) - new Date(b.createdAt)
         } )
         return this.m_list()
     }
@@ -111,13 +111,13 @@ class Model {
         let data = this.readData()
         let ascDesc = ''
 
-        if(input === 'ASC'){
+        if(input === 'asc'){
             data.sort(function(a,b){
-                return new Date(a.date) - new Date(b.date)
+                return new Date(a.createdAt) - new Date(b.createdAt)
             })
-        } else if (input === 'DESC'){
+        } else if (input === 'desc'){
             data.sort(function(a,b){
-                return new Date(b.date) - new Date(a.date)
+                return new Date(b.createdAt) - new Date(a.createdAt)
             } )
         }
 
@@ -126,6 +126,25 @@ class Model {
         }
 
         return ascDesc
+
+    }
+
+    m_listCompleted(input){
+        let data = this.readData()
+        let completedSort = ''
+
+        data.sort(function(a,b) {
+            return new Date(b.completedDate) - new Date(a.completedDate)
+
+        })
+
+        for (let i = 0; i < data.length; i++) {
+            if(data[i].completedDate !== null){
+                completedSort += `${data[i].id}. ${data[i].status} ${data[i].task}\n`
+            }
+            
+        }
+        return completedSort
 
     }
 

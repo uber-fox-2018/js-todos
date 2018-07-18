@@ -45,6 +45,10 @@ class Controller {
         this.view.v_listOutStanding(this.model.m_listOutStanding(input))
     }
 
+    c_listCompleted(input){
+        this.view.v_listCompleted(this.model.m_listCompleted(input))
+    }
+
 
 }
 

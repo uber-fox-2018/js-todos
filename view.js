@@ -2,6 +2,7 @@
 class View {
     constructor(){
 
+
     }
     v_help(){
         //RELEASE 0
@@ -44,6 +45,10 @@ class View {
     }
 
     v_listOutStanding(input){
+        console.log(input)
+    }
+
+    v_listCompleted(input){
         console.log(input)
     }
 
