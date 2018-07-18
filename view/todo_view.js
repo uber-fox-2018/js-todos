@@ -28,14 +28,6 @@ class ViewTodo {
     console.log(chalk.blue(table.toString()))
   }
 
-  static message() {
-
-  }
-
-  static messageErr(errData) {
-    console.log(errData)
-  }
-
   static messageAdd(task) {
     console.log(`Added "${task}" to your TODO List`)
   }
