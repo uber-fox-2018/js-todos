@@ -16,14 +16,8 @@ class Control {
         this._view =  new view(parameter)
     }
     help(){
-        console.log('node todo.js ')
-        console.log('node todo.js help')
-        console.log('node todo.js list')
-        console.log('node todo.js add <task_content>')
-        console.log('node todo.js findById <task_id>')
-        console.log('node todo.js delete <task_id>')
-        console.log('node todo.js complete <task_id>')
-        console.log('node todo.js uncomplete <task_id>')
+        this.view()
+        this._view.help()
     }
 
     list(){
@@ -36,7 +30,9 @@ class Control {
     add(input){
         this.model(input)
         this._model.readData()
-        let add_data = this._model.writeData()
+        this._model.addData()
+        this.view()
+        this._view.addData(input)
     }
 
     findById(input){
@@ -53,7 +49,9 @@ class Control {
     delete(id_delete){
         this.model()
         this._model.readData()
-        this._model.deleteData(id_delete)
+        let data = this._model.deleteData(id_delete)
+        this.view()
+        this._view.deleteData(data)
     }
 
     complete(id){

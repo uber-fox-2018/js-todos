@@ -20,29 +20,24 @@ class Model {
         return data
     }
 
-    writeData (){
-        const fs = require('fs')
+    addData (){
         let addObj = {'task': this.add, 'id':this.data.length+1}
         this.data.push(addObj)
         let addStr = JSON.stringify(this.data,null,2)
         fs.writeFileSync('data.json',addStr)
-        console.log('added ' + this.add + ' to your TODO list')
-
     }
 
-    deleteData(id){
-        const fs = require('fs')
-        
+    deleteData(id){      
         this.data.forEach(element => {
             if(element.id == id){
                 var data_delete = this.processDataObj([element])
-                this.delete = data_delete.slice(2)
+                this.delete = data_delete.slice(8)
             }
         });
         this.data.splice(id-1,1)
         let deleteStr = JSON.stringify(this.data,null,2)
         fs.writeFileSync('data.json',deleteStr)
-        console.log('deleted ' + this.delete + ' from your TODO list')
+        return this.delete
     }
 
     findData(id){

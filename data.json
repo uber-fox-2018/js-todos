@@ -23,5 +23,13 @@
     "task": "makan bareng",
     "id": 5,
     "status": "[ ]"
+  },
+  {
+    "task": "bo-can",
+    "id": 6
+  },
+  {
+    "task": "bo-can",
+    "id": 7
   }
 ]
