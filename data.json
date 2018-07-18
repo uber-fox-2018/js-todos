@@ -1,26 +1,8 @@
 [
   {
     "id": 1,
-    "activity": "Makan Malam"
-  },
-  {
-    "id": 2,
-    "activity": "Makan Bersama"
-  },
-  {
-    "id": 4,
-    "activity": "Ngoding Lagi"
-  },
-  {
-    "id": 5,
-    "activity": "Ngoding"
-  },
-  {
-    "id": 6,
-    "activity": "Makan Ikan"
-  },
-  {
-    "id": 7,
-    "activity": "Nongkrong"
+    "activity": "pulang now",
+    "status": true,
+    "createdAt": "7/18/2018"
   }
 ]

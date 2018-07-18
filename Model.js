@@ -23,6 +23,16 @@ class Model {
         }
         return data;
     }
+
+    static findByTgl(tgl) {
+        var data = [];
+        for(let i = 0; i < this.read().length; i++) {
+            if(this.read()[i].createdAt == tgl) {
+                data.push(this.read()[i]);
+            }
+        }
+        return data;
+    }
 }
 
 module.exports = Model

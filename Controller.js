@@ -23,6 +23,12 @@ class Controller {
             this.complete();
         } else if (this.perintah[0] == 'uncomplete') {
             this.uncomplete();
+        } else if (this.perintah[0] == 'list:complete') {
+            this.listComplete('complete');
+        } else if (this.perintah[0] == 'list:uncomplete') {
+            this.listUncomplete('uncomplete');
+        } else if (this.perintah[0] == 'list:created') {
+            this.listCreated();
         }
 
 
@@ -37,13 +43,25 @@ class Controller {
         View.DisplayList(todo);
     }
 
+    listComplete(complete) {
+        let todo = Model.read();
+        View.DisplayComplete(todo, complete);
+    }
+
+    listUncomplete(uncomplete) {
+        let todo = Model.read();
+        View.DisplayUnomplete(todo, uncomplete);
+    }
+
     add() {
         let todo = Model.read();
         let id = +todo[todo.length-1].id + 1;
+        let tgl = new Date().toLocaleDateString();
         let activityObj = {
             "id": id,
             "activity": this.perintah[1],
-            "status": true
+            "status": true,
+            "createdAt": tgl
         };
         
         this.activity = todo
@@ -58,6 +76,11 @@ class Controller {
     findById() {
         let todoId = Model.findById(this.perintah[1]);
         View.DisplayOne(todoId);  
+    }
+
+    listCreated() {
+        let todoId = Model.findByTgl(this.perintah[1]);
+        View.DisplayTgl(todoId); 
     }
 
     deleteId() {

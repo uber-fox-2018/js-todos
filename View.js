@@ -36,6 +36,40 @@ class View {
         }
         
     }
+
+    static DisplayTgl(todo) {
+        console.log(`===== ===== Todo Created at pada ${ todo[0].createdAt } ===== =====`);
+        if(todo[0].status) {
+            let lihat = `[ ] ${ todo[0].activity }`;
+            console.log(lihat);
+        } else {
+            let lihat = `[x] ${ todo[0].activity }`;
+            console.log(lihat);
+        }
+        
+    }
+
+    static DisplayComplete(todo, complete) {
+        console.log(`===== ===== Daftar Todo ${ complete } ===== =====`);
+
+        for(let i = 0; i < todo.length; i++) {
+            if(!todo[i].status) {
+                let lihat = `[x] ${ todo[i].activity }`;
+                console.log(lihat);
+            }             
+        }
+    }
+
+    static DisplayUnomplete(todo, uncomplete) {
+        console.log(`===== ===== Daftar Todo ${ uncomplete } ===== =====`);
+
+        for(let i = 0; i < todo.length; i++) {
+            if(todo[i].status) {
+                let lihat = `[ ] ${ todo[i].activity }`;
+                console.log(lihat);
+            }             
+        }
+    }
 }
 
 module.exports = View
