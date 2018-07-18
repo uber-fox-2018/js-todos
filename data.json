@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "task": "Bikin aplikasi",
+    "id": 1,
+    "status": "[ ]"
+  },
+  {
+    "task": "Main Node.js",
+    "id": 2,
+    "status": "[ ]"
+  },
+  {
+    "task": "asu",
+    "id": 3,
+    "status": "[X]"
+  },
+  {
+    "task": "asu",
+    "id": 4,
+    "status": "[ ]"
+  },
+  {
+    "task": "makan bareng",
+    "id": 5,
+    "status": "[ ]"
+  }
+]
