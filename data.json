@@ -1,1 +1,1 @@
-[]
+[{"id":1,"task":"makan","status":" ","created_at":"2018-07-18T07:40:28.103Z","completed_at":"","tag":["chicken","pizza", "favorite"]},{"id":2,"task":"minum","status":" ","created_at":"2018-07-18T07:40:34.308Z","completed_at":"","tag":["activity","favorite"]},{"id":3,"task":"ngoding","status":" ","created_at":"2018-07-18T07:40:39.354Z","completed_at":"","tag":[]}]
