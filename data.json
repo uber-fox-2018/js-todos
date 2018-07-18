@@ -1,1 +1,1 @@
-[]
+[{"id":1,"check":"[x]","task":"Make brekkie","tag":["food"],"created":"2018-07-18T12:04:49.776Z","completed":"2018-07-18T12:05:38.600Z"},{"id":2,"check":"[ ]","task":"Go to the beach","tag":["outdoor"],"created":"2018-07-18T12:05:00.964Z","completed":null},{"id":3,"check":"[x]","task":"Workout","tag":[],"created":"2018-07-18T12:05:14.470Z","completed":"2018-07-18T12:05:51.142Z"},{"id":4,"check":"[ ]","task":"Make dinner","tag":["food"],"created":"2018-07-18T12:05:20.299Z","completed":null}]
