@@ -17,15 +17,21 @@ class ToDo {
     } else if (command == 'list'){
       this.list();
     } else if (command == 'add'){
-      this.add(input);
+      this.add(input[0]);
     } else if (command == 'findById'){
-      this.findById(input);
+      this.findById(input[0]);
     } else if (command == 'delete'){
-      this.remove(input);
+      this.remove(input[0]);
     } else if (command == 'complete'){
-      this.complete(input);
+      this.complete(input[0]);
     } else if (command == 'uncomplete'){
-      this.uncomplete(input);
+      this.uncomplete(input[0]);
+    } else if (command == 'sortby'){
+      if (input[0] == 'created'){
+        this.sortByCreated(input[1]);
+      } else if (input[0] == 'completed') {
+        this.sortByCompleted(input[1]);
+      }
     } else {
       View.help();
     }
@@ -58,6 +64,16 @@ class ToDo {
 
   uncomplete (id){
     let data = this.Model.uncompleteTask(id);
+    View.display(data);
+  }
+
+  sortByCreated(order){
+    let data = this.Model.sortCreatedDate(order);
+    View.display(data);
+  }
+
+  sortByCompleted(order){
+    let data = this.Model.sortCompletedDate(order);
     View.display(data);
   }
 }

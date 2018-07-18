@@ -25,6 +25,7 @@ class ToDo {
       status: '[ ]',
       task: newTask,
       dateCreated: new Date (),
+      dateCompleted: '',
       tags: [],
     }
     this.data.push(taskObj);
@@ -48,7 +49,8 @@ class ToDo {
   completeTask(id){
     this.data.forEach((task) =>{
       if(task.id == id){
-        task.status = '[X]'
+        task.status = '[X]';
+        task.dateCompleted = new Date();
       }
     })
 
@@ -59,12 +61,58 @@ class ToDo {
   uncompleteTask(id){
     this.data.forEach((task) =>{
       if(task.id == id){
-        task.status = '[ ]'
+        task.status = '[ ]';
+        task.dateCompleted = '';
       }
     })
 
     this.write(this.data);
     return this.data;
+  }
+
+  sortCreatedDate(order){
+    let dates = [];
+    let newData = []
+    this.data.forEach((task) => {
+      dates.push(task.dateCreated);
+    })
+    dates.sort();
+
+    for (let i in dates){
+      for (let j in this.data){
+        if(dates[i] === this.data[j].dateCreated){
+          newData.push(this.data[j]);
+        }
+      }
+    }
+    if (order == 'DESC'){
+      return newData.reverse();
+    } else {
+      return newData;
+    }
+  }
+
+  sortCompletedDate(order){
+    let dates = [];
+    let newData = []
+    this.data.filter(task => task.status == '[X]')
+    .forEach((task) => {
+      dates.push(task.dateCompleted);
+    })
+    dates.sort();
+
+    for (let i in dates){
+      for (let j in this.data){
+        if(dates[i] === this.data[j].dateCompleted){
+          newData.push(this.data[j]);
+        }
+      }
+    }
+    if (order == 'DESC'){
+      return newData.reverse();
+    } else {
+      return newData;
+    }
   }
 }
 

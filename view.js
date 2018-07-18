@@ -9,6 +9,8 @@ class ToDo {
     console.log('node todo.js delete <task_id>');
     console.log('node todo.js complete <task_id>');
     console.log('node todo.js uncomplete <task_id>');
+    console.log('node todo.js sortby created <ASC/DESC>');
+    console.log('node todo.js sortby completed <ASC/DESC>');
   }
 
   static display (data){
