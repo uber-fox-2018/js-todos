@@ -6,7 +6,7 @@ class Controller {
         this.model = new Model();
     }
 
-    printHelp() {
+    helpMenu() {
         View.displayHelp();
     }
 
@@ -29,12 +29,10 @@ class Controller {
 
     findById(param_findById){
         this.model.readData()
-        // console.log(param_findById);
         View.displayById(this.model.findById(param_findById))
     }
 
     delete(param_delete){
-        // console.log(param_delete);
         View.delete(this.model.delete(param_delete))
     }
 
@@ -46,11 +44,33 @@ class Controller {
         View.uncomplete(this.model.uncomplete(param_changeToUncomplete))
     }
 
+    sortDate(param_sortDate){
+        let sorting = this.model.sortDate(param_sortDate)
+        
+        if (sorting == undefined){
+            View.displayListError()
+        }else {
+            this.model.sortDate(sorting)
+            View.displayList(sorting)
+        }
+    }
 
+    sortCompleted(){
+        let sorting = this.model.sortCompleted()
+        
+        if (sorting == false){
+            View.displayListError()
+        }else {
+            View.sortCompleted(sorting)
+        }
+    }
 
+    addTag(param_1, param_2){
+        View.showAddTag(this.model.addTag(param_1, param_2))
+    }
 
-
-
+    filter(param_filter){
+        View.showFilter(this.model.filter(param_filter))
+    }
 }
-
 module.exports = Controller
