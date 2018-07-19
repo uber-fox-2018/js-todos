@@ -21,7 +21,7 @@ class Controller {
 
 	static findById(id) {
 		let result=Model.findById(id)
-		View.showById()
+		View.showById(result)
 	}
 
 	static deleteId(id) {
