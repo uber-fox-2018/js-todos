@@ -24,6 +24,7 @@ class Controller{
             var namaTask = model.file[argv[1]][0].split(' ').splice(2,potong-1).join(' ')
             var sudah = model.file[argv[1]][0].split(' ').splice(0,2).join('X')
             model.file[argv[1]][0] = sudah +' '+ namaTask
+            // console.log(namaTask)
             model.complete()
         }
     }
@@ -34,7 +35,7 @@ class Controller{
         }else{
             var potong = model.file[argv[1]][0].split(' ').length
             var belum = model.file[argv[1]][0].split(' ').splice(0,1)[0].split('X').join(' ')
-            var nama = model.file[argv[1]][0].split(' ').splice(2,potong-1).join(' ')
+            var nama = model.file[argv[1]][0].split(' ').splice(1).join(' ')
             model.file[argv[1]][0] = belum + ' '+ nama
             model.uncomplete()
         }
@@ -43,7 +44,7 @@ class Controller{
 }
 var controller = new Controller
 
-if(argv[0] === 'help'){
+if(argv[0] === 'help' || argv[0] === undefined){
     view.displayHelp()
 }else if(argv[0] === 'list'){
     view.displayList()
